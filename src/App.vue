@@ -59,10 +59,4 @@ export default defineComponent({
 .header {
     flex: 0 0 auto;
 }
-
-main {
-    margin: 3em;
-    flex: 1 0 auto;
-    overflow: hidden;
-}
 </style>
