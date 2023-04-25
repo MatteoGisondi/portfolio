@@ -1,49 +1,74 @@
 <template>
-  <a class="resume" :href="source">
-    <h1>Resume</h1>
-  </a>
-  <div class="content">
-    <vue-pdf-embed :source="source" />
-  </div>
+    <a :href="source" target="_blank" rel="noopener noreferrer">
+        <h1>Resume</h1>
+    </a>
+    <div class="content">
+        <vue-pdf-embed class="pdf-embed" :source="source" />
+    </div>
 </template>
 
-<script>
-import VuePdfEmbed from 'vue-pdf-embed'
+<script lang="ts">
+import { defineComponent } from 'vue';
+import VuePdfEmbed from 'vue-pdf-embed';
 
-export default {
-  components: {
-    VuePdfEmbed,
-  },
-  data() {
-    return {
-      source: '/matteo-gisondi_resume.pdf',
-    }
-  },
-}
+export default defineComponent({
+    components: {
+        VuePdfEmbed,
+    },
+    data() {
+        return {
+            source: '/matteo-gisondi_resume.pdf',
+        };
+    },
+});
 </script>
 
-<style>
+<style scoped>
 body {
-  overflow-y: scroll;
+    overflow-y: scroll;
 }
 
-.resume {
-  display: inline-block;
-  position: relative;
-  color: inherit;
-  margin: 0 var(--spacing, 0px);
-  transition: margin 0.25s;
+a {
+    display: inline-block;
+    position: relative;
+    color: inherit;
+    margin: 0 var(--spacing, 0px);
+    transition: margin 0.25s;
+    text-decoration: underline;
 }
 
-vue-pdf-embed {
-  size-adjust: unset;
+a:hover {
+    color: black;
 }
 
-div .vue-pdf-embed {
-  margin-bottom: 8px;
-  scale: 225%;
-  position: relative;
-  top: 30em;
-  padding: 2em 0em 2em 0em;
+/* Update content div styles */
+.content {
+    margin-bottom: 8px;
+    transform: scale(2.25);
+    position: relative;
+    top: 30em;
+    padding: 2em 0em 2em 0em;
+}
+
+/* Update PDF embed styles for different screen sizes */
+.pdf-embed {
+    width: 100%;
+    /* Take up the whole width by default */
+}
+
+@media (min-width: 768px) {
+
+    /* For large screens, set width to 90% */
+    .pdf-embed {
+        width: 90%;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* For mobile screens, set width to 100% */
+    .pdf-embed {
+        width: 100%;
+    }
 }
 </style>

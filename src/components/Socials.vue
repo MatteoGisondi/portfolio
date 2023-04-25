@@ -1,36 +1,55 @@
 <template>
-  <div class="socials">
-    <a href="https://www.linkedin.com/in/matteo-gisondi-b09662197/">
-      <img src="../icons/linkedin.svg">
-    </a>
-    <a href="https://github.com/MatteoGisondi">
-      <img src="../icons/github.svg">
-    </a>
-    <a href="mailto:matteo.gisondi@gmail.com">
-      <img src="../icons/email.svg">
-    </a>
-  </div>
+    <div class="socials">
+        <a class="socials-link" :href="linkedin" target="_blank">
+            <img class="socials-icon" src="@icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+        <a class="socials-link" :href="github" target="_blank">
+            <img class="socials-icon" src="@icons/github.svg" alt="GitHub" />
+        </a>
+        <a class="socials-link" :href="'mailto:' + email">
+            <img class="socials-icon" src="@icons/email.svg" alt="Email" />
+        </a>
+    </div>
 </template>
 
+<script lang="ts">
+export default {
+    name: "Socials",
+    data() {
+        return {
+            linkedin: "https://www.linkedin.com/in/matteo-gisondi-b09662197/",
+            github: "https://github.com/MatteoGisondi",
+            email: "matteo.gisondi@gmail.com",
+        };
+    },
+};
+</script>
+
 <style scoped>
-
 .socials {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
 }
 
-.socials a {
-  margin: 20px 0px 0px 20px;
-  flex: 2;
+.socials-link {
+    margin: 10px;
 }
 
-.socials img:hover {
-  transform-origin: 50% 50%;
-  -webkit-transform: scale(1.1);
-  -webkit-transition: -webkit-transform 0.5s ease;
-  -moz-transform: scale(1.1);
-  -moz-transition: -moz-transform 0.5s ease;
-  transform: scale(1.1);
-  transition: -webkit-transform 0.5s ease;
+/* Media query for mobile devices */
+@media (max-width: 767px) {
+    .socials {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socials-link {
+        margin: 5px;
+    }
+}
+
+.socials-icon:hover {
+    transform-origin: 50% 50%;
+    transform: scale(1.1);
+    transition: transform 0.5s ease-out;
 }
 </style>

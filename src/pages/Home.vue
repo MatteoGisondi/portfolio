@@ -1,20 +1,21 @@
-<script>
-import Cards from "../components/Cards.vue";
-
-export default {
-  components: {
-    Cards,
-  },
-};
-</script>
-
 <template>
-  <h1>Summary</h1>
-  <div class="content">
-    <Cards />
-  </div>
+    <h1>Summary</h1>
+    <div class="content">
+        <Cards />
+    </div>
 </template>
 
-<style scoped>
+<script lang="ts">
+import { defineComponent } from "vue";
+import Cards from "../components/Cards.vue";
 
-</style>
+export default defineComponent({
+    components: {
+        Cards,
+    },
+});
+
+export type HomeType = ReturnType<typeof defineComponent>;
+</script>
+
+<style scoped></style>
