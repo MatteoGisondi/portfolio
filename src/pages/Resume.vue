@@ -42,12 +42,20 @@ a:hover {
 }
 
 .pdf-embed {
-    width: 100%;
+    width: 100vw;
 }
 
 @media (min-width: 800px) {
+    .content {
+        padding: 0;
+        margin: 0 auto;
+        translate: transform(-50%, 0);
+    }
+
     .pdf-embed {
-        width: 90%;
+        width: 80vw;
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 </style>
