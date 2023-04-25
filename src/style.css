@@ -19,11 +19,22 @@
     -webkit-text-size-adjust: 100%;
 }
 
+main {
+    margin: 3em auto;
+    max-width: 800px;
+    padding: 0 1em;
+    min-height: 100vh;
+}
+
 .content {
-    display: flex;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 0 1em;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    min-height: 60vh;
 }
 
 a {
@@ -43,6 +54,7 @@ body {
     min-width: 320px;
     min-height: 100vh;
     background-color: var(--body-background);
+    overflow: hidden;
 }
 
 h1 {
@@ -94,7 +106,7 @@ button:focus-visible {
 }
 
 @media (max-height: 800px) {
-    .content {
+    main {
         align-items: flex-start;
     }
 }

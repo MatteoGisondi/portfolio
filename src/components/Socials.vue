@@ -1,7 +1,11 @@
 <template>
     <div class="socials">
         <a class="socials-link" :href="linkedin" target="_blank">
-            <img class="socials-icon" src="@icons/linkedin.svg" alt="LinkedIn" />
+            <img
+                class="socials-icon"
+                src="@icons/linkedin.svg"
+                alt="LinkedIn"
+            />
         </a>
         <a class="socials-link" :href="github" target="_blank">
             <img class="socials-icon" src="@icons/github.svg" alt="GitHub" />
@@ -35,8 +39,7 @@ export default {
     margin: 10px;
 }
 
-/* Media query for mobile devices */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
     .socials {
         flex-direction: column;
         align-items: center;

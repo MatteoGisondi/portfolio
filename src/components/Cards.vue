@@ -3,16 +3,16 @@
         <div class="card" style="background-color: hsl(220, 16%, 22%)">
             <h3>Summary</h3>
             <p>
-                I am a Concordia University Software Engineering graduate
-                with a love for all things deployment.
+                I am a Concordia University Software Engineering graduate with a
+                love for all things deployment.
             </p>
         </div>
         <div class="card" style="background-color: hsl(222, 16%, 28%)">
             <h3>DevOps</h3>
             <p>
                 My interest in DevOps is driven by my need to tinker. I have a
-                passion for learning and mastering tools like Docker, Kubernetes and
-                Ansible.
+                passion for learning and mastering tools like Docker, Kubernetes
+                and Ansible.
             </p>
         </div>
         <div class="card" style="background-color: hsl(220, 17%, 32%)">
@@ -92,8 +92,7 @@ li {
     margin-bottom: 0.5rem;
 }
 
-/* Media query for screens with maximum width of 767px (mobile devices) */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
     .card {
         padding: 2rem;
         max-width: 100%;
