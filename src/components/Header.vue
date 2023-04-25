@@ -1,7 +1,13 @@
 <template>
     <header>
         <h2 class="logo">{{ title }}</h2>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <input
+            type="checkbox"
+            id="nav-toggle"
+            class="nav-toggle"
+            @click="toggleNav"
+            :checked="navOpen"
+        />
         <nav>
             <ul>
                 <li><a href="#/">Home</a></li>
@@ -10,7 +16,14 @@
                 <li><a href="#/resume">Resume</a></li>
             </ul>
         </nav>
-        <label for="nav-toggle" class="nav-toggle-label">
+        <label
+            for="nav-toggle"
+            class="nav-toggle-label"
+            :class="{
+                'spin-clockwise': navOpen,
+                'spin-anticlockwise': !navOpen,
+            }"
+        >
             <span></span>
         </label>
     </header>
@@ -25,6 +38,16 @@ export default defineComponent({
         title: {
             type: String,
             required: true,
+        },
+    },
+    data() {
+        return {
+            navOpen: false,
+        };
+    },
+    methods: {
+        toggleNav() {
+            this.navOpen = !this.navOpen;
         },
     },
 });
@@ -53,8 +76,30 @@ h1 {
     left: -9999px !important;
 }
 
-.nav-toggle:focus ~ .nav-toggle-label {
-    outline: 3px solid hsla(195, 53%, 79%, 0.75);
+.spin-clockwise {
+    animation: spin-clockwise 0.5s ease-in-out 1;
+}
+
+.spin-anticlockwise {
+    animation: spin-anticlockwise 0.5s ease-in-out 1;
+}
+
+@keyframes spin-clockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes spin-anticlockwise {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(-180deg);
+    }
 }
 
 .nav-toggle-label {
@@ -138,13 +183,14 @@ nav a:hover {
 }
 
 @media screen and (min-width: 800px) {
-    .nav-toggle-label {
-        display: none;
-    }
-
     header {
         display: grid;
         grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    }
+
+    .nav-toggle-label {
+        display: none;
+        border: none;
     }
 
     .logo {
@@ -159,7 +205,6 @@ nav a:hover {
         background: none;
         top: initial;
         left: initial;
-
         grid-column: 3 / 4;
         display: flex;
         justify-content: flex-end;
