@@ -35,10 +35,16 @@ header {
     background: var(--background);
     background-color: var(--card-background);
     text-align: center;
+    padding: 1rem;
     position: fixed;
-    z-index: 999;
-    width: 100%;
     top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0;
 }
 
 .nav-toggle {
@@ -47,7 +53,7 @@ header {
     left: -9999px !important;
 }
 
-.nav-toggle:focus~.nav-toggle-label {
+.nav-toggle:focus ~ .nav-toggle-label {
     outline: 3px solid hsla(195, 53%, 79%, 0.75);
 }
 
@@ -107,7 +113,6 @@ nav ul {
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
-    margin-right: 1em;
 }
 
 nav a {
@@ -123,11 +128,11 @@ nav a:hover {
     color: hsl(0, 0%, 0%);
 }
 
-.nav-toggle:checked~nav {
+.nav-toggle:checked ~ nav {
     transform: scale(1, 1);
 }
 
-.nav-toggle:checked~nav a {
+.nav-toggle:checked ~ nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
 }
@@ -181,19 +186,15 @@ nav a:hover {
         height: 5px;
         background: hsl(0, 0%, 0%);
         position: absolute;
-        bottom: -10px;
+        top: -0.75em;
         left: 0;
         right: 0;
-        transform-origin: right center;
-        transform: scaleX(0);
-        transition: transform 250ms ease-in-out;
+        transform: scale(0, 1);
+        transition: transform ease-in-out 250ms;
     }
 
     nav a:hover::before {
-        transform-origin: left center;
-        transform: scaleX(1);
-        transition: transform 250ms ease-in-out;
+        transform: scale(1, 1);
     }
 }
 </style>
-
