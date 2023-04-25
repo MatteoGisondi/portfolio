@@ -3,8 +3,9 @@
         <div class="card" style="background-color: hsl(220, 16%, 22%)">
             <h3>Summary</h3>
             <p>
-                I am a Concordia University Software Engineering graduate with a
-                love for all things deployment.
+                I am a Software Engineering graduate with a love for all things
+                deployment. Some of my programming skills include Python, C#,
+                Java, and JavaScript/TypeScript.
             </p>
         </div>
         <div class="card" style="background-color: hsl(222, 16%, 28%)">
