@@ -1,29 +1,19 @@
 <template>
     <header>
         <h2 class="logo">{{ title }}</h2>
-        <input
-            type="checkbox"
-            id="nav-toggle"
-            class="nav-toggle"
-            @click="toggleNav"
-            :checked="navOpen"
-        />
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" @click="toggleNav" :checked="navOpen" />
         <nav>
-            <ul>
+            <ul class="gradient">
                 <li><a href="#/">Home</a></li>
                 <li><a href="#/contact">Contact</a></li>
                 <li><a href="#/projects">Projects</a></li>
                 <li><a href="#/resume">Resume</a></li>
             </ul>
         </nav>
-        <label
-            for="nav-toggle"
-            class="nav-toggle-label"
-            :class="{
+        <label for="nav-toggle" class="nav-toggle-label" :class="{
                 'spin-clockwise': navOpen,
                 'spin-anticlockwise': !navOpen,
-            }"
-        >
+            }">
             <span></span>
         </label>
     </header>
@@ -49,6 +39,19 @@ export default defineComponent({
         toggleNav() {
             this.navOpen = !this.navOpen;
         },
+        closeNav() {
+            this.navOpen = false;
+        },
+    },
+    mounted() {
+        window.addEventListener('click', (event) => {
+            if (!this.$el.contains(event.target)) {
+                this.closeNav();
+            }
+        });
+    },
+    beforeUnmount() {
+        window.removeEventListener('click', this.closeNav);
     },
 });
 </script>
@@ -66,7 +69,7 @@ header {
     z-index: 1000;
 }
 
-h1 {
+h2 {
     margin: 0;
 }
 
@@ -88,6 +91,7 @@ h1 {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(180deg);
     }
@@ -97,6 +101,7 @@ h1 {
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(-180deg);
     }
@@ -137,6 +142,10 @@ h1 {
     top: 7px;
 }
 
+.gradient {
+    background: linear-gradient(to right, hsla(220, 16%, 22%, 0.8), hsla(220, 16%, 22%, 0));
+}
+
 nav {
     position: absolute;
     text-align: left;
@@ -174,11 +183,11 @@ nav a:hover {
     color: hsl(0, 0%, 0%);
 }
 
-.nav-toggle:checked ~ nav {
+.nav-toggle:checked~nav {
     transform: scale(1, 1);
 }
 
-.nav-toggle:checked ~ nav a {
+.nav-toggle:checked~nav a {
     opacity: 1;
     transition: opacity 250ms ease-in-out 250ms;
 }
