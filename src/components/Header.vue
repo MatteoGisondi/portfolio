@@ -158,6 +158,7 @@ nav ul {
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
+    background: var(--background)
 }
 
 nav a {

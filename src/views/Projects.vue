@@ -53,6 +53,10 @@ onMounted(() => {
 </script>
 
 <style>
+.content {
+    display: flex;
+}
+
 .projects {
     margin: 0;
     padding: 0;

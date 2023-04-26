@@ -21,15 +21,13 @@
 
 main {
     margin: 3em 3em 1em 3em;
-    max-width: 800px;
     padding: 0 1em;
-    min-height: 100vh;
     flex: 1 0 auto;
 }
 
 .content {
     margin: 0 auto;
-    max-width: 800px;
+    max-width: 1000px;
     padding: 0 1em;
     justify-content: center;
     align-items: center;
@@ -106,12 +104,23 @@ button:focus-visible {
     }
 }
 
-@media (max-height: 800px) {
-    main {
-        align-items: flex-start;
+@media (max-width: 800px) {
+    #app {
+        margin: 0;
+        padding: 0%;
     }
 
-    body {
-        overflow-y: auto;
+    .content {
+        padding: 0%;
+    }
+
+    .wrapper {
+        margin: 0;
+    }
+
+    main {
+        margin: 4em 0em 0em 0em;
+        padding: 0%;
+        min-height: fit-content;
     }
 }

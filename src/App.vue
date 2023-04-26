@@ -59,4 +59,15 @@ export default defineComponent({
 .header {
     flex: 0 0 auto;
 }
+
+@media (max-width: 800px) {
+    .wrapper {
+        margin: 0;
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+}
 </style>
