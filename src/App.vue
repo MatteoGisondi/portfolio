@@ -8,11 +8,11 @@
 </template>
 
 <script lang="ts">
-import Home from "./pages/Home.vue";
-import Contact from "./pages/Contact.vue";
-import Projects from "./pages/Projects.vue";
-import Resume from "./pages/Resume.vue";
-import NotFound from "./pages/NotFound.vue";
+import Home from "./views/Home.vue";
+import Contact from "./views/Contact.vue";
+import Projects from "./views/Projects.vue";
+import Resume from "./views/Resume.vue";
+import NotFound from "./views/NotFound.vue";
 
 import Header from "./components/Header.vue";
 import { defineComponent } from "vue";
