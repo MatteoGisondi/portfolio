@@ -91,19 +91,6 @@ button:focus-visible {
     text-align: center;
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        color: #213547;
-        background-color: #ffffff;
-    }
-    a:hover {
-        color: #747bff;
-    }
-    button {
-        background-color: #f9f9f9;
-    }
-}
-
 @media (max-width: 800px) {
     #app {
         margin: 0;
