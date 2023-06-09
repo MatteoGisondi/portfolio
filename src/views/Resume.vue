@@ -11,7 +11,7 @@
 import { defineComponent } from "vue";
 import VuePdfEmbed from "vue-pdf-embed";
 
-const pdf = "/matteo-gisondi_resume.pdf";
+const pdf = "/matteo_gisondi-resume.pdf";
 
 export default defineComponent({
     components: {
