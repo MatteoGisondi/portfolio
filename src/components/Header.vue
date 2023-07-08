@@ -10,10 +10,10 @@
         />
         <nav>
             <ul>
-                <li><a href="#/">Home</a></li>
-                <li><a href="#/contact">Contact</a></li>
-                <li><a href="#/projects">Projects</a></li>
-                <li><a href="#/resume">Resume</a></li>
+                <li><router-link to="/">Home</router-link></li>
+                <li><router-link to="/contact">Contact</router-link></li>
+                <li><router-link to="/projects">Projects</router-link></li>
+                <li><router-link to="/resume">Resume</router-link></li>
             </ul>
         </nav>
         <label
@@ -33,7 +33,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-    name: "Header",
     props: {
         title: {
             type: String,
@@ -49,6 +48,12 @@ export default defineComponent({
         toggleNav() {
             this.navOpen = !this.navOpen;
         },
+    },
+    created() {
+        this.$router.beforeEach((_to, _from, next) => {
+            this.navOpen = false;
+            next();
+        });
     },
 });
 </script>
@@ -158,7 +163,7 @@ nav ul {
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
-    background: var(--background)
+    background: var(--background);
 }
 
 nav a {
