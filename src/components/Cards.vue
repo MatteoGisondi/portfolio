@@ -1,35 +1,32 @@
 <template>
     <div class="wrapper">
-        <div class="card" style="background-color: hsl(220, 16%, 22%)">
-            <h3>Summary</h3>
+        <div class="card" style="background-color: hsl(220, 16%, 24%)">
+            <h3>Tech Enthusiast</h3>
             <p>
-                I am a Software Engineering graduate with a love for all things
-                deployment. Some of my programming skills include Python, C#,
-                Java, and JavaScript/TypeScript.
+                I am a Software Engineering graduate with a passion for
+                cutting-edge technologies. From Python and C# to Java and
+                JavaScript/TypeScript, I wield a diverse range of programming
+                skills to build innovative solutions.
             </p>
         </div>
         <div class="card" style="background-color: hsl(222, 16%, 28%)">
-            <h3>DevOps</h3>
+            <h3>DevOps Advocate</h3>
             <p>
-                My interest in DevOps is driven by my need to tinker. I have a
-                passion for learning and mastering tools like Docker, Kubernetes
-                and Ansible.
+                I embrace the power of DevOps to streamline development and
+                deployment processes. With expertise in Docker, Kubernetes, and
+                Ansible, I ensure efficient and scalable infrastructure,
+                enabling seamless delivery of applications.
             </p>
         </div>
         <div class="card" style="background-color: hsl(220, 17%, 32%)">
-            <h3>Deployment</h3>
+            <h3>Home Lab Explorer</h3>
             <p>
-                I have my own Home Lab! It isn't much, but I have several Docker
-                containers deployed including this site. Notable mentions
-                include:
+                Welcome to my digital playground! Within my Home Lab, I
+                experiment with various Docker containers, including noteworthy
+                services like Traefik, PiHole, Jellyfin, Nextcloud, and
+                Vaultwarden. Join me on this journey of discovery and
+                innovation.
             </p>
-            <ul>
-                <li>Traefik</li>
-                <li>PiHole</li>
-                <li>Jellyfin</li>
-                <li>Nextcloud</li>
-                <li>Vaultwarden</li>
-            </ul>
         </div>
     </div>
 </template>
