@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "vue": "^3.2.47",
-    "vue-pdf-embed": "^1.1.5"
+    "vue-pdf-embed": "^1.1.5",
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@types/vue-router": "^2.0.0",
     "@vitejs/plugin-vue": "^4.1.0",
     "typescript": "^5.0.2",
     "vite": "^4.3.0",
