@@ -20,7 +20,7 @@
 }
 
 main {
-    margin: 3em 3em 1em 3em;
+    margin: 3em 1em 1em 1em;
     padding: 0 1em;
     flex: 1 0 auto;
 }
@@ -119,8 +119,8 @@ button:focus-visible {
     }
 
     main {
-        margin: 4em 0em 0em 0em;
-        padding: 0%;
+        margin: 4em 0 0 0;
+        padding: 0;
         min-height: fit-content;
     }
 }

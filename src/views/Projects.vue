@@ -52,55 +52,63 @@ onMounted(() => {
 });
 </script>
 
-<style>
+<style scoped>
 .content {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .projects {
     margin: 0;
     padding: 0;
-    position: relative;
-    top: 2em;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-gap: 1em;
+    list-style: none;
+    justify-items: center;
+    align-items: flex-start;
 }
 
 .projects-li {
     box-sizing: border-box;
-    width: 16em;
+    width: 100%;
+    max-width: 16em;
     height: 11em;
     vertical-align: top;
-    display: inline-block;
     list-style: none;
-    margin: 1em 0 0 1em;
-    padding: .5em;
+    margin: 1em 0 0 0;
+    padding: 0.5em;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.projects-li:nth-child(3n-2) {
-    margin: 1em 0 0 0;
-}
-
 .projects-a {
     height: 11em;
-    border-top: .5em solid hsl(0, 0%, 94%);
+    border-top: 0.5em solid hsl(0, 0%, 94%);
     display: block;
     color: hsl(0, 0%, 0%);
     text-decoration: none;
-    padding: 0 .5em 0 0;
+    padding: 0 0.5em 0 0;
     margin: 0;
     font-size: 1.3em;
     font-weight: 400;
+    transition: border-top-color 0.3s ease-out;
 }
 
-.projects-a:hover {
-    border-top: .5em solid hsl(0, 0%, 0%);
+/* Remove the hover effect on mobile */
+@media screen and (min-width: 800px) {
+    .projects-a:hover {
+        border-top: 0.5em solid hsl(0, 0%, 0%);
+        transition: border-top-color 0.1s ease-out;
+    }
 }
 
 .projects-lang {
     color: hsl(0, 0%, 900%);
-    font-size: .8em;
-    margin: .2em 0 0 0;
+    font-size: 0.8em;
+    margin: 0.2em 0 0 0;
 }
 
 .projects-desc {
