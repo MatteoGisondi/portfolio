@@ -21,7 +21,7 @@ export default {
     name: "Socials",
     data() {
         return {
-            linkedin: "https://www.linkedin.com/in/matteo-gisondi-b09662197/",
+            linkedin: "https://www.linkedin.com/in/matteo-gisondi/",
             github: "https://github.com/MatteoGisondi",
             email: "matteo.gisondi@gmail.com",
         };
@@ -50,9 +50,12 @@ export default {
     }
 }
 
+.socials-icon {
+    will-change: transform;
+    transition: transform 0.3s ease-out;
+}
+
 .socials-icon:hover {
-    transform-origin: 50% 50%;
     transform: scale(1.1);
-    transition: transform 0.5s ease-out;
 }
 </style>
