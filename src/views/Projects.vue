@@ -1,12 +1,12 @@
 <template>
     <h1>Projects</h1>
     <div class="content">
-        <ul class="projects">
-            <li v-for="repo in repos" :key="repo.id" class="projects-li">
-                <a :href="repo.html_url" class="projects-a">
-                    {{ repo.name }}
-                    <div class="projects-lang">{{ repo.language }}</div>
-                    <div class="projects-desc">{{ repo.description }}</div>
+        <ul>
+            <li v-for="repo in repos" :key="repo.id">
+                <a :href="repo.html_url">
+                    <div class="repo">{{ repo.name }}</div>
+                    <div class="lang">{{ repo.language }}</div>
+                    <div class="desc">{{ repo.description }}</div>
                 </a>
             </li>
         </ul>
@@ -53,41 +53,34 @@ onMounted(() => {
 </script>
 
 <style scoped>
-.content {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.projects {
+ul {
     margin: 0;
     padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-    grid-gap: 1em;
+    display: flex;
+    flex-wrap: wrap;
     list-style: none;
-    justify-items: center;
-    align-items: flex-start;
+    justify-content: center;
 }
 
-.projects-li {
+li {
     box-sizing: border-box;
     width: 100%;
     max-width: 16em;
     height: 11em;
     vertical-align: top;
     list-style: none;
-    margin: 1em 0 0 0;
+    margin: 1em 0.5em 0 0.5em;
     padding: 0.5em;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-.projects-a {
+a {
     height: 11em;
     border-top: 0.5em solid hsl(0, 0%, 94%);
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
     color: hsl(0, 0%, 0%);
     text-decoration: none;
     padding: 0 0.5em 0 0;
@@ -97,22 +90,40 @@ onMounted(() => {
     transition: border-top-color 0.3s ease-out;
 }
 
-/* Remove the hover effect on mobile */
-@media screen and (min-width: 800px) {
-    .projects-a:hover {
-        border-top: 0.5em solid hsl(0, 0%, 0%);
-        transition: border-top-color 0.1s ease-out;
-    }
+.repo {
+    color: hsl(0, 0%, 0%);
+    font-size: 1.1em;
+    font-weight: 200;
+    margin: 0.2em 0 0 0;
 }
 
-.projects-lang {
+.lang {
     color: hsl(0, 0%, 900%);
     font-size: 0.8em;
     margin: 0.2em 0 0 0;
 }
 
-.projects-desc {
+.desc {
     color: hsl(0, 0%, 100%);
     text-overflow: inherit;
+}
+
+@media screen and (max-width: 800px) {
+    ul {
+        flex-direction: column;
+    }
+
+    li {
+        width: auto;
+        max-width: none;
+    }
+}
+
+/* Remove the hover effect on mobile */
+@media screen and (min-width: 800px) {
+    a:hover {
+        border-top: 0.5em solid hsl(0, 0%, 0%);
+        transition: border-top-color 0.1s ease-out;
+    }
 }
 </style>
