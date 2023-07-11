@@ -60,6 +60,7 @@ ul {
     flex-wrap: wrap;
     list-style: none;
     justify-content: center;
+    max-width: 1080px;
 }
 
 li {
