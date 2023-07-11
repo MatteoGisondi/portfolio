@@ -55,7 +55,7 @@ a:hover {
     width: 100vw;
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
     .content {
         padding: 0;
         margin: 0 auto;

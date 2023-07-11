@@ -22,7 +22,7 @@ export default defineComponent({
     components: {
         Header,
     },
-    router, // Use the router in the component
+    router,
 });
 </script>
 
@@ -37,11 +37,7 @@ export default defineComponent({
     flex: 0 0 auto;
 }
 
-@media (max-width: 800px) {
-    .wrapper {
-        margin: 0;
-    }
-
+@media screen and (max-width: 800px) {
     body {
         overflow-x: hidden;
     }

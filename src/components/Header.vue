@@ -200,7 +200,7 @@ nav a:hover {
 @media screen and (min-width: 800px) {
     header {
         display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        grid-template-columns: 1fr auto minmax(800px, 3fr) 1fr;
     }
 
     .nav-toggle-label {

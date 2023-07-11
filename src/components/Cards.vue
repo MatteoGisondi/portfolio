@@ -99,7 +99,7 @@ li {
     margin-bottom: 0.5rem;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .card {
         padding: 2rem;
         max-width: 100%;

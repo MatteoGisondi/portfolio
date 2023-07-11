@@ -39,7 +39,7 @@ export default {
     margin: 10px;
 }
 
-@media (max-width: 800px) {
+@media screen and (max-width: 800px) {
     .socials {
         flex-direction: column;
         align-items: center;
