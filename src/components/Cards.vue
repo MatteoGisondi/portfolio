@@ -37,6 +37,15 @@
     margin: 0;
 }
 
+p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+}
+
 .wrapper {
     display: flex;
     color: hsl(0, 0%, 100%);
