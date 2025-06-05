@@ -1,29 +1,32 @@
 <template>
     <div class="socials">
         <a class="socials-link" :href="linkedin" target="_blank">
-            <img
-                class="socials-icon"
-                src="@icons/linkedin.svg"
-                alt="LinkedIn"
-            />
+            <img class="socials-icon" :src="linkedinIcon" alt="LinkedIn" />
         </a>
         <a class="socials-link" :href="github" target="_blank">
-            <img class="socials-icon" src="@icons/github.svg" alt="GitHub" />
+            <img class="socials-icon" :src="githubIcon" alt="Github" />
         </a>
-        <a class="socials-link" :href="'mailto:' + email">
-            <img class="socials-icon" src="@icons/email.svg" alt="Email" />
+        <a class="socials-link" :href="email">
+            <img class="socials-icon" :src="emailIcon" alt="Email" />
         </a>
     </div>
 </template>
 
 <script lang="ts">
+import EmailIcon from '@/icons/email.svg';
+import GithubIcon from '@/icons/github.svg';
+import LinkedInIcon from '@/icons/linkedin.svg';
+
 export default {
     name: "Socials",
     data() {
         return {
-            linkedin: "https://www.linkedin.com/in/matteo-gisondi/",
+            email: "mailto:matteo.gisondi@gmail.com",
+            emailIcon: EmailIcon,
             github: "https://github.com/MatteoGisondi",
-            email: "matteo.gisondi@gmail.com",
+            githubIcon: GithubIcon,
+            linkedin: "https://www.linkedin.com/in/matteo-gisondi/",
+            linkedinIcon: LinkedInIcon,
         };
     },
 };
