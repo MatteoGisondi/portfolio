@@ -9,8 +9,8 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Header from "./components/Header.vue";
-import router from "./router";
+import Header from "@/components/Header.vue";
+import router from "@/router";
 
 export default defineComponent({
     name: "App",

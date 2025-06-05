@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import Socials from "../components/Socials.vue";
+import Socials from "@/components/Socials.vue";
 
 export default {
     components: {

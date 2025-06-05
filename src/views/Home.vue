@@ -7,7 +7,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Cards from "../components/Cards.vue";
+import Cards from "@/components/Cards.vue";
 
 export default defineComponent({
     components: {

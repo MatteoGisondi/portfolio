@@ -3,13 +3,20 @@
     <div class="content">
         <p>Sorry, the page you are looking for does not exist.</p>
         <p>Here's a picture of my dogs instead:</p>
-        <img src="@assets/dogs.png" alt="A picture of my dog" />
+        <img :src="dogs" alt="A picture of my dog" />
     </div>
 </template>
 
 <script lang="ts">
+import Dogs from '@/assets/dogs.webp';
+
 export default {
     name: "NotFound",
+    data() {
+        return {
+            dogs: Dogs,
+        }
+    }
 };
 </script>
 
