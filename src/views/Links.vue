@@ -1,5 +1,5 @@
 <template>
-    <h1>Contact</h1>
+    <h1>Links</h1>
     <div class="content">
         <Socials />
     </div>
