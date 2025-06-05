@@ -1,31 +1,31 @@
 <template>
     <div class="wrapper">
         <div class="card" style="background-color: hsl(220, 16%, 24%)">
-            <h3>Tech Enthusiast</h3>
+            <h3>About Me</h3>
             <p>
-                I am a Software Engineering graduate with a passion for
-                cutting-edge technologies. From Python and C# to Java and
-                JavaScript/TypeScript, I wield a diverse range of programming
-                skills to build innovative solutions.
+                Hi! I'm a Software Engineer / SRE with a passion for
+                homelabbing. I wield a diverse range of programming
+                skills to build innovative solutions. I care about
+                clean code and best practices.
             </p>
         </div>
         <div class="card" style="background-color: hsl(222, 16%, 28%)">
-            <h3>DevOps Advocate</h3>
+            <h3>Career</h3>
             <p>
-                I embrace the power of DevOps to streamline development and
-                deployment processes. With expertise in Docker, Kubernetes, and
-                Ansible, I ensure efficient and scalable infrastructure,
-                enabling seamless delivery of applications.
+                I value digital sovereignty, which is why I've
+                been working at OVHcloud for two years as an SRE. My
+                primary responsibilities are managing and supporting
+                Openstack deployments at scale.
             </p>
         </div>
         <div class="card" style="background-color: hsl(220, 17%, 32%)">
-            <h3>Home Lab Explorer</h3>
+            <h3>Home Lab</h3>
             <p>
-                Welcome to my digital playground! Within my Home Lab, I
-                experiment with various Docker containers, including noteworthy
-                services like Traefik, PiHole, Jellyfin, Nextcloud, and
-                Vaultwarden. Join me on this journey of discovery and
-                innovation.
+                Within my Home Lab, I deploy various
+                opensource solutions, including noteworthy
+                services like Tailscale/Headscale, Traefik,
+                the *arr Stack, Jellyfin, Nextcloud, and Vaultwarden
+                deployed under docker or kube.
             </p>
         </div>
     </div>
