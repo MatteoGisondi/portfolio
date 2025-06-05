@@ -1,13 +1,28 @@
-# https://v2.vuejs.org/v2/cookbook/dockerize-vuejs-app.html?redirect=true
-FROM node:16-alpine as base
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build
+FROM oven/bun:1.2-slim AS build
 
-FROM nginx:stable-alpine as deploy
-ARG port
-COPY --from=base /app/dist /usr/share/nginx/html
-EXPOSE $port
+WORKDIR /app
+
+COPY package.json /app/
+COPY bun.lock /app/
+RUN bun install --frozen-lockfile
+
+COPY frontend /app/frontend
+COPY public /app/public
+COPY vite* /app/
+COPY tsconfig* /app/
+COPY package.json /app
+COPY index* /app
+
+ENV NODE_ENV=production
+RUN bun run build
+
+FROM nginx:stable-otel AS serve
+
+COPY --from=build /app/dist /var/www/html
+COPY nginx_config/nginx.conf /etc/nginx/nginx.conf
+COPY nginx_config/default.conf /etc/nginx/conf.d/default.conf
+
+RUN chown nginx:nginx /var/www/html
+
+EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
