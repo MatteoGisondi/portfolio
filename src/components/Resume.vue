@@ -36,9 +36,7 @@ export default {
             return;
         }
         localStorage.setItem("resume", resume);
-        return {
-            source: resume,
-        };
+        this.source = resume;
     },
 };
 </script>

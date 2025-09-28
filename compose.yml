@@ -15,7 +15,7 @@ services:
       traefik.http.routers.portfolio.rule: Host(`${TRAEFIK_PORTFOLIO}`)
       traefik.http.routers.portfolio.entrypoints: https
       traefik.http.routers.portfolio.tls: true
-      traefik.http.routers.portfolio.tls.certresolver: cloudflare
+      traefik.http.routers.portfolio.tls.certresolver: letsencrypt
 
 networks:
   proxy:
