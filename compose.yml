@@ -9,11 +9,13 @@ services:
     networks:
       - proxy
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.portfolio.rule=Host(`${TRAEFIK_PORTFOLIO}`)"
-      - "traefik.http.routers.portfolio.entrypoints=https"
-      - "traefik.http.routers.portfolio.tls=true"
-      - "traefik.http.routers.portfolio.tls.certresolver=mydnschallenge"
+      labels:
+      traefik.enable: true
+      traefik.docker.network: proxy
+      traefik.http.routers.portfolio.rule: Host(`${TRAEFIK_PORTFOLIO}`)
+      traefik.http.routers.portfolio.entrypoints: https
+      traefik.http.routers.portfolio.tls: true
+      traefik.http.routers.portfolio.tls.certresolver: cloudflare
 
 networks:
   proxy:

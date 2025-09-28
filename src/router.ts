@@ -1,19 +1,35 @@
+import MainView from "@/views/MainView.vue";
+import NotFoundView from "@/views/NotFoundView.vue";
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/Home.vue";
-import Links from "@/views/Links.vue";
-import Projects from "@/views/Projects.vue";
-import Resume from "@/views/Resume.vue";
-import NotFound from "@/views/NotFound.vue";
+
+const routes = [
+    {
+        path: "/",
+        name: "main",
+        component: MainView,
+    },
+    {
+        path: "/:catchAll(.*)",
+        name: "NotFound",
+        component: NotFoundView,
+    },
+];
 
 const router = createRouter({
     history: createWebHistory(),
-    routes: [
-        { path: "/", component: Home },
-        { path: "/links", component: Links },
-        { path: "/projects", component: Projects },
-        { path: "/resume", component: Resume },
-        { path: "/:catchAll(.*)", component: NotFound },
-    ],
+    routes,
+    scrollBehavior(to, _from, savedPosition) {
+        if (savedPosition) {
+            return savedPosition;
+        }
+        if (to.hash) {
+            return {
+                el: to.hash,
+                top: 50,
+            };
+        }
+        return { x: 0, y: 0 };
+    },
 });
 
 export default router;

@@ -4,25 +4,25 @@
         <input type="checkbox" id="nav-toggle" class="nav-toggle" @click="toggleNav" :checked="navOpen" />
         <nav>
             <ul>
-                <li><router-link to="/">Home</router-link></li>
-                <li><router-link to="/links">Links</router-link></li>
-                <li><router-link to="/projects">Projects</router-link></li>
-                <li><router-link to="/resume">Resume</router-link></li>
+                <li><router-link to="#summary">Summary</router-link></li>
+                <li><router-link to="#projects">Projects</router-link></li>
+                <li><router-link to="#resume">Resume</router-link></li>
+                <li><router-link to="#links">Links</router-link></li>
             </ul>
         </nav>
         <label for="nav-toggle" class="nav-toggle-label" :class="{
-                'spin-clockwise': navOpen,
-                'spin-anticlockwise': !navOpen,
-            }">
+            'spin-clockwise': navOpen,
+            'spin-anticlockwise': !navOpen,
+        }">
             <span></span>
+            <img src="@/assets/icons/menu-meatballs.svg" alt="Menu" class="menu-icon" />
         </label>
     </header>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
 
-export default defineComponent({
+export default {
     props: {
         title: {
             type: String,
@@ -58,13 +58,13 @@ export default defineComponent({
             next();
         });
     },
-});
+};
 </script>
 
 <style scoped>
 header {
-    background: var(--background);
-    background-color: var(--card-background);
+    background: var(--primary);
+    background-color: var(--primary);
     text-align: center;
     padding: 1rem;
     position: fixed;
@@ -74,7 +74,7 @@ header {
     z-index: 1000;
 }
 
-h2 {
+h1 {
     margin: 0;
 }
 
@@ -122,29 +122,10 @@ h2 {
     align-items: center;
 }
 
-.nav-toggle-label span,
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
+.menu-icon {
+    height: 60%;
+    width: auto;
     display: block;
-    background: hsl(0, 0%, 100%);
-    height: 2px;
-    width: 2em;
-    border-radius: 2px;
-    position: relative;
-}
-
-.nav-toggle-label span::before,
-.nav-toggle-label span::after {
-    content: "";
-    position: absolute;
-}
-
-.nav-toggle-label span::before {
-    bottom: 7px;
-}
-
-.nav-toggle-label span::after {
-    top: 7px;
 }
 
 .gradient {
@@ -156,7 +137,7 @@ nav {
     text-align: left;
     top: 100%;
     left: 0;
-    background: var(--background);
+    background: var(--primary);
     width: 100%;
     transform: scale(1, 0);
     transform-origin: top;
@@ -172,7 +153,7 @@ nav ul {
 nav li {
     margin-bottom: 1em;
     margin-left: 1em;
-    background: var(--background);
+    background: var(--primary);
 }
 
 nav a {

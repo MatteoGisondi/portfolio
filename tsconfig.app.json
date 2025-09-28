@@ -36,8 +36,7 @@
             "@/components/*": ["src/components/*"],
             "@/public/*": ["public/*"],
             "@/router/*": ["src/router/*"],
-            "@/slots/*": ["src/slots/*"],
-            "@/styles/*": ["src/styles/*"],
+            "@/types/*": ["src/types/*"],
             "@/views/*": ["src/views/*"]
         }
     }
