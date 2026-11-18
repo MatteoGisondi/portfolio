@@ -12,27 +12,27 @@
     "build-only": "vite build",
     "serve": "bun index.ts",
     "preview": "vite preview",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --noEmit -p tsconfig.app.json && vue-tsc --noEmit -p tsconfig.node.json"
   },
   "dependencies": {
-    "dotenv": "^18.0.8",
-    "vue": "^3.5.44",
+    "dotenv": "^18.0.10",
+    "vue": "^3.5.45",
     "vue-pdf-embed": "2.1.7",
-    "vue-router": "5.4.0"
+    "vue-router": "5.5.1"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.10",
-    "@types/bun": "^1.4.3",
-    "@types/node": "^26.6.5",
+    "@tsconfig/node20": "^20.1.11",
+    "@types/bun": "^1.4.4",
+    "@types/node": "^26.6.6",
     "@types/vue-router": "^2.0.0",
-    "@vitejs/plugin-vue": "6.0.10",
-    "@vue/compiler-sfc": "^3.5.44",
+    "@vitejs/plugin-vue": "6.0.11",
+    "@vue/compiler-sfc": "^3.5.45",
     "@vue/tsconfig": "^0.9.1",
-    "eslint": "^10.13.0",
-    "eslint-plugin-vue": "10.11.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-vue": "10.12.1",
     "npm-run-all2": "9.0.4",
-    "typescript": "^5",
-    "vite": "8.3.5",
-    "vue-tsc": "3.3.13"
+    "typescript": "^6.0.3",
+    "vite": "8.3.8",
+    "vue-tsc": "3.3.14"
   }
 }
